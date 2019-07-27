@@ -3,6 +3,18 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
 
+function MiComponente()  {
+     return <p> Hola mundo </p>   
+}
+
+
+class MiComponenteDeClase extends Component {
+  render() {
+     return <p> Hola soy de la clase </p> 
+  }
+}
+
+
 class App extends Component {
   constructor() {
     super();
@@ -14,10 +26,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+        <MiComponenteDeClase/>
       </div>
     );
   }
