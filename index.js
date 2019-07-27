@@ -3,8 +3,13 @@ import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
 
-function MiComponente()  {
-     return <p> Hola mundo </p>   
+function MiComponenteA(props)  {
+  console.log(props.children);
+     return  props.children  
+}
+
+function MiComponenteB(props)  {
+     return <p> {props.nombre} with react today  </p>   
 }
 
 
@@ -24,9 +29,15 @@ class App extends Component {
   }
 
   render() {
+    let nombre = "Nelson"
     return (
       <div>
-        <MiComponenteDeClase/>
+        <MiComponenteA nombre= {nombre} >
+          <p> children 1 componente A </p>
+          <p> children 2 componente A  </p>
+          <p> {2+3+6}  </p>
+        </MiComponenteA>
+        <MiComponenteB nombre= {nombre}  />
       </div>
     );
   }
